@@ -8,7 +8,7 @@ func TestAlarm_SendAlarm(t *testing.T) {
 		Message: &Message{
 			Msgtype: "text",
 			Text:    &Text{
-				Content: "etl:test",
+				Content: "test",
 			},
 		},
 	}

@@ -16,6 +16,12 @@ type Message struct {
 	Text     *Text     `json:"text"`
 	Link     *Link     `json:"link"`
 	Markdown *Markdown `json:"markdown"`
+	At       *At       `json:"at"`
+}
+
+type At struct {
+	AtMobiles []string `json:"atMobiles"`
+	IsAtAll   bool     `json:"isAtAll"`
 }
 
 type Text struct {
