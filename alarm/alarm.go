@@ -7,6 +7,7 @@ import (
 
 type Alarm struct {
 	BotName string   `json:"bot_name"`
+	GroupAt string   `json:"group_at"`
 	Url     string   `json:"url"`
 	Secret  string   `json:"secret"`
 	Message *Message `json:"message"`
