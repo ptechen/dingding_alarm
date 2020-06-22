@@ -1,0 +1,60 @@
+// 定义项目 API 的 proto 文件 可以同时描述 gRPC 和 HTTP API
+// protobuf 文件参考:
+//  - https://developers.google.com/protocol-buffers/
+syntax = "proto3";
+
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
+// package 命名使用 {appid}.{version} 的方式, version 形如 v1, v2 ..
+package alarm;
+
+// NOTE: 最后请删除这些无用的注释 (゜-゜)つロ
+
+option go_package = "alarm";
+option (gogoproto.goproto_getters_all) = false;
+
+message HelloReq {
+    string name = 1 [(gogoproto.moretags) = 'form:"name" validate:"required"'];
+}
+
+message HelloResp {
+    string Content = 1 [(gogoproto.jsontag) = 'content'];
+}
+
+message Alarm {
+    string bot_name = 1 [(gogoproto.moretags) = 'form:"bot_name" validate:"required"'];
+    string group_at = 2 [(gogoproto.moretags) = 'form:"group_at" validate:"required"'];
+    string url = 3;
+    string secret = 4;
+    Message message = 5 [(gogoproto.moretags) = 'form:"message" validate:"required"'];
+
+}
+
+message Message {
+    string msgtype = 1 [(gogoproto.moretags) = 'form:"msgtype" validate:"required"'];
+    Text text = 2;
+    Link link = 3;
+    Markdown markdown = 4;
+}
+
+message Text {
+    string content = 1;
+}
+
+message Link {
+    string text = 1;
+    string title = 2;
+    string pic_url = 3;
+    string messageUrl = 4;
+}
+
+message Markdown {
+    string title = 1;
+    string text = 2;
+}
+
+message At {
+    repeated string atMobiles = 1;
+    bool isAtAll = 2;
+}
