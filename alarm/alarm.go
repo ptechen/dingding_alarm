@@ -6,9 +6,10 @@ import (
 )
 
 type Alarm struct {
-	Url     string
-	Secret  string
-	Message *Message
+	BotName string   `json:"bot_name"`
+	Url     string   `json:"url"`
+	Secret  string   `json:"secret"`
+	Message *Message `json:"message"`
 }
 
 type Message struct {
