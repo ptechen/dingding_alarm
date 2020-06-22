@@ -1,4 +1,4 @@
-module dingding_alarm
+module github.com/ptechen/dingding_alarm
 
 go 1.14
 
