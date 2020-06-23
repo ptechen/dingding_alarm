@@ -19,7 +19,8 @@ message Bot {
     string group_at = 2 [(gogoproto.moretags) = 'form:"group_at" validate:"required"'];
     string url = 3;
     string secret = 4;
-    Message message = 5 [(gogoproto.moretags) = 'form:"message" validate:"required"'];
+    bool   at_all = 5;
+    Message message = 6 [(gogoproto.moretags) = 'form:"message" validate:"required"'];
 }
 
 message Message {
