@@ -5,6 +5,8 @@ import (
 	"github.com/kirinlabs/HttpRequest"
 )
 
+//go:generate kratos tool protoc --grpc bot.proto
+
 func (p *Alarm) SendAlarm() (err error) {
 	data := make(map[string]interface{})
 	dataBytes, _ := json.Marshal(p.Message)

@@ -7,11 +7,11 @@ import "github.com/gogo/protobuf/gogoproto/gogo.proto";
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
 // package 命名使用 {appid}.{version} 的方式, version 形如 v1, v2 ..
-package alarm;
+package bot;
 
 // NOTE: 最后请删除这些无用的注释 (゜-゜)つロ
 
-option go_package = "alarm";
+option go_package = "bot";
 option (gogoproto.goproto_getters_all) = false;
 
 message HelloReq {
