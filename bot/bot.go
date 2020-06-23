@@ -8,6 +8,9 @@ import (
 //go:generate kratos tool protoc --grpc bot.proto
 
 func (p *Bot) SendAlarm() (err error) {
+	if p.IsAtAll && p.Message.At != nil{
+		p.Message.At.IsAtAll = true
+	}
 	data := make(map[string]interface{})
 	dataBytes, _ := json.Marshal(p.Message)
 	err = json.Unmarshal(dataBytes, &data)
