@@ -20,7 +20,7 @@ message Bot {
     string url = 3;
     string secret = 4;
     Message message = 5 [(gogoproto.moretags) = 'form:"message" validate:"required"'];
-
+    At at = 6;
 }
 
 message Message {
