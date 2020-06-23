@@ -7,7 +7,7 @@ import (
 
 //go:generate kratos tool protoc --grpc bot.proto
 
-func (p *Alarm) SendAlarm() (err error) {
+func (p *Bot) SendAlarm() (err error) {
 	data := make(map[string]interface{})
 	dataBytes, _ := json.Marshal(p.Message)
 	err = json.Unmarshal(dataBytes, &data)

@@ -3,7 +3,7 @@ package bot
 import "testing"
 
 func TestAlarm_SendAlarm(t *testing.T) {
-	p := &Alarm{
+	p := &Bot{
 		Url: "https://oapi.dingtalk.com/robot/send?access_token=***",
 		Message: &Message{
 			Msgtype: "text",
