@@ -1,4 +1,4 @@
-package alarm
+package bot
 
 import "testing"
 

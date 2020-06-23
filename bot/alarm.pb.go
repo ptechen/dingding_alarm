@@ -3,7 +3,7 @@
 
 // package 命名使用 {appid}.{version} 的方式, version 形如 v1, v2 ..
 
-package alarm
+package bot
 
 import (
 	fmt "fmt"
